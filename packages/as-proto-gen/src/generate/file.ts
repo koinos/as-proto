@@ -21,24 +21,9 @@ export function generateFile(
     types.push(generateEnum(enumDescriptor, fileContext));
   }
 
-  let NamespacedTypes = types.join("\n\n");
-  if (filePackage) {
-    const packageParts = filePackage.split(".");
-    fileContext.registerDefinition(packageParts[0]);
-
-    while (packageParts.length > 0) {
-      const packagePart = packageParts.pop()!; // type assertion - see line above
-      NamespacedTypes = `
-        export namespace ${packagePart} {
-          ${NamespacedTypes}
-        }
-      `;
-    }
-  }
-
   return `
     ${fileContext.getImportsCode()}
     
-    ${NamespacedTypes}
+    ${types.join("\n\n")}
   `;
 }

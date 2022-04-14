@@ -19,14 +19,15 @@ export function generateRef(
   const typeName = getTypeName(fieldTypeName);
 
   if (isSameFile) {
-    return fileContext.registerDefinition(typeName);
+    const typeNameSlices = typeName.split('.')
+    return typeNameSlices[typeNameSlices.length - 1] //fileContext.registerDefinition(typeName);
   } else {
     const fileName = fileDescriptor.getName();
     assert.ok(fileName);
 
     return fileContext.registerImport(
       typeName,
-      getRelativeImport(getPathWithoutProto(fileName))
+      getPathWithoutProto(fileName)
     );
   }
 }

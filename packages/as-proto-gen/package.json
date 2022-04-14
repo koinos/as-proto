@@ -1,6 +1,6 @@
 {
-  "name": "as-proto-gen",
-  "version": "0.2.2",
+  "name": "@romainroe/as-proto-gen",
+  "version": "0.3.0",
   "license": "MIT",
   "main": "lib/index.js",
   "author": "Piotr Oleś <piotrek.oles@gmail.com>",
@@ -22,7 +22,8 @@
   },
   "devDependencies": {
     "@types/google-protobuf": "^3.15.5",
-    "@types/prettier": "^2.4.2"
+    "@types/prettier": "^2.4.2",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "google-protobuf": "^3.19.2",
@@ -31,7 +32,7 @@
   },
   "scripts": {
     "test": "echo 'no tests yet'",
-    "build": "rimraf build && tsc",
+    "build": "yarn rimraf build && tsc",
     "prepublishOnly": "cp ../../README.md ./"
   }
 }
