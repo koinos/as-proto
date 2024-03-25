@@ -4,6 +4,7 @@
   "license": "MIT",
   "type": "module",
   "author": "Piotr Oleś <piotrek.oles@gmail.com>",
+  "contributors": ["Koinos Group <contact@koinos.group>", "Roamin Ro"],
   "repository": "https://github.com/piotr-oles/as-proto.git",
   "private": true,
   "workspaces": [
